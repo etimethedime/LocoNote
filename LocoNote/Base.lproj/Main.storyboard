@@ -73,7 +73,7 @@
                     <connections>
                         <segue destination="f0H-xd-taQ" kind="relationship" relationship="viewControllers" id="O4e-cJ-bNW"/>
                         <segue destination="AqL-a3-S04" kind="relationship" relationship="viewControllers" id="kvi-mn-edH"/>
-                        <segue destination="VLs-T4-9yr" kind="relationship" relationship="viewControllers" id="PVP-fF-7QE"/>
+                        <segue destination="Y1F-kH-aYN" kind="relationship" relationship="viewControllers" id="04O-M9-0Tr"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZT-am-fFB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -299,44 +299,62 @@
             <point key="canvasLocation" x="-648" y="-558"/>
         </scene>
         <!--Settings-->
-        <scene sceneID="w9p-Ys-RlV">
+        <scene sceneID="Kza-8J-RsW">
             <objects>
-                <viewController storyboardIdentifier="Settings" id="VLs-T4-9yr" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="snE-4c-LGu">
+                <viewController title="Settings" id="Y1F-kH-aYN" customClass="SettingsViewController" customModule="LocoNote" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pJf-6K-M3W">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I3r-dv-C5k">
-                                <rect key="frame" x="0.0" y="769" width="393" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <tabBarItem systemItem="favorites" id="iEe-ZS-PfT"/>
-                                    <tabBarItem title="Maps" image="map" catalog="system" id="Pjg-Pg-riN"/>
-                                    <tabBarItem title="Item" image="gear" catalog="system" id="f4e-zC-XbE"/>
-                                </items>
-                            </tabBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCv-dq-zWo">
-                                <rect key="frame" x="165" y="416" width="63" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0JM-vM-OY2">
+                                <rect key="frame" x="0.0" y="184" width="393" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="393" id="acr-Kq-SR6"/>
+                                    <constraint firstAttribute="height" constant="162" id="ike-Yh-gyG"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort Gallery by: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0wX-Zn-4uf">
+                                <rect key="frame" x="124" y="150" width="145" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ascending Sort: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3x-I4-LHQ">
+                                <rect key="frame" x="77.999999999999986" y="410" width="150.66666666666663" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gdh-WY-XzU">
+                                <rect key="frame" x="243" y="408" width="51" height="31"/>
+                            </switch>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="wfQ-Rl-Mcg"/>
+                        <viewLayoutGuide key="safeArea" id="7wS-DU-bfX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="V3x-I4-LHQ" firstAttribute="centerY" secondItem="pJf-6K-M3W" secondAttribute="centerY" constant="-3" id="0Wn-DC-MDa"/>
+                            <constraint firstItem="V3x-I4-LHQ" firstAttribute="centerX" secondItem="pJf-6K-M3W" secondAttribute="centerX" constant="-43.166666666666686" id="23O-Ah-nIR"/>
+                            <constraint firstItem="Gdh-WY-XzU" firstAttribute="leading" secondItem="V3x-I4-LHQ" secondAttribute="trailing" constant="14.333333333333371" id="YTc-yD-uDB"/>
+                            <constraint firstItem="0JM-vM-OY2" firstAttribute="top" secondItem="7wS-DU-bfX" secondAttribute="top" constant="125" id="ZAT-E2-wU6"/>
+                            <constraint firstItem="0wX-Zn-4uf" firstAttribute="centerX" secondItem="pJf-6K-M3W" secondAttribute="centerX" id="bi5-VF-0MT"/>
+                            <constraint firstItem="0JM-vM-OY2" firstAttribute="leading" secondItem="7wS-DU-bfX" secondAttribute="leading" id="iK4-RC-ZeV"/>
+                            <constraint firstItem="Gdh-WY-XzU" firstAttribute="top" secondItem="0JM-vM-OY2" secondAttribute="bottom" constant="62" id="x0E-yN-fNk"/>
+                            <constraint firstItem="0wX-Zn-4uf" firstAttribute="top" secondItem="7wS-DU-bfX" secondAttribute="top" constant="91" id="z05-K4-3cQ"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" selectedImage="gearshape" id="HRr-qw-oLm"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape.fill" catalog="system" selectedImage="gearshape.fill" id="CKt-dr-T0b"/>
+                    <connections>
+                        <outlet property="pickerView" destination="0JM-vM-OY2" id="DMC-6N-Par"/>
+                        <outlet property="switchAsc" destination="Gdh-WY-XzU" id="NqG-dC-GPb"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HW4-hD-tbp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="spG-jZ-q15" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="392" y="-558"/>
+            <point key="canvasLocation" x="356" y="-548"/>
         </scene>
     </scenes>
     <resources>
-        <image name="gear" catalog="system" width="128" height="122"/>
-        <image name="gearshape" catalog="system" width="128" height="123"/>
+        <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <image name="map" catalog="system" width="128" height="112"/>
         <image name="photo.on.rectangle.angled.fill" catalog="system" width="128" height="104"/>
         <image name="plus" catalog="system" width="128" height="113"/>
