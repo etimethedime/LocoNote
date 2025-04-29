@@ -68,6 +68,8 @@ class AddLocationViewController: UIViewController, UIImagePickerControllerDelega
         }
     }
     
+    @IBAction func changeEditMode(_ sender: Any) {
+    }
     func openSettings() {
         if let settingsUrl = URL(string: UIApplication.openSettingsURLString) {
             if #available(iOS 10.0, *) {
@@ -122,5 +124,6 @@ class AddLocationViewController: UIViewController, UIImagePickerControllerDelega
             }
         }
     }
+    
 
 }
