@@ -234,6 +234,9 @@
                     <navigationItem key="navigationItem" title="Location" id="8U1-qG-Ocy"/>
                     <connections>
                         <outlet property="imgLocation" destination="tZe-Pg-0kQ" id="gIv-Q9-cO7"/>
+                        <outlet property="lblAccuracy" destination="nc4-qQ-h23" id="FuH-CD-oQC"/>
+                        <outlet property="lblLatitude" destination="2Cd-tw-gRK" id="mdo-ss-l3A"/>
+                        <outlet property="lblLongitude" destination="KNu-2m-yxU" id="wdC-DC-Pq6"/>
                         <outlet property="sgmtEditMode" destination="YPr-HA-siH" id="9Ap-ya-4oP"/>
                         <outlet property="txtLocation" destination="1h7-Qq-n4K" id="AJT-kB-xIf"/>
                     </connections>

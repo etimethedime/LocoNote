@@ -8,11 +8,14 @@
 import UIKit
 import CoreData
 import AVFoundation
+import CoreLocation
 
-class AddLocationViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddLocationViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
     
     var currentLocation: Location?
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    lazy var geoCoder = CLGeocoder()
+    var locationManager: CLLocationManager!
 
     @IBOutlet weak var sgmtEditMode: UISegmentedControl!
     
@@ -20,11 +23,25 @@ class AddLocationViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBOutlet weak var imgLocation: UIImageView!
     
+    @IBOutlet weak var lblLatitude: UILabel!
+    
+    @IBOutlet weak var lblLongitude: UILabel!
+    
+    @IBOutlet weak var lblAccuracy: UILabel!
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
     }
     
     @IBAction func changePicture(_ sender: Any) {
@@ -78,6 +95,32 @@ class AddLocationViewController: UIViewController, UIImagePickerControllerDelega
 
     
     @IBAction func deviceCoordinates(_ sender: Any) {
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.distanceFilter = 100
+        locationManager.startUpdatingLocation()
+        locationManager.startUpdatingHeading()
+    }
+    
+    func locationManager (_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            print ("Permission Granted")
+        }
+        else {
+            print("Permission NOT Granted")
+        }
+    }
+    
+    func locationManager (_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            let eventDate = location.timestamp
+            let howRecent = eventDate.timeIntervalSinceNow
+            if Double(howRecent) < 15.0 {
+                let coordinate = location.coordinate
+                lblLatitude.text = String(format: "%g\u{00B0}", coordinate.latitude)
+                lblLongitude.text = String(format: "%g\u{00B0}", coordinate.longitude)
+                lblAccuracy.text = String(format: "%gm", location.horizontalAccuracy)
+            }
+        }
     }
     /*
     // MARK: - Navigation
