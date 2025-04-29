@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e9c8993-c248-4026-b0b5-ad62b0777519" name="Changes" comment="added view controllers - e" />
+    <list default="true" id="6e9c8993-c248-4026-b0b5-ad62b0777519" name="Changes" comment="added default date setter - e">
+      <change afterPath="$PROJECT_DIR$/LocoNote/Assets.xcassets/AppIcon.appiconset/Untitled presentation (2).png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LocoNote.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/LocoNote.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LocoNote/AddLocationViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/LocoNote/AddLocationViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LocoNote/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/LocoNote/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,6 +65,10 @@
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SwiftWorkspaceSettings">
+    <option name="detectedToolchain" value="true" />
+    <option name="toolchainPathValue" value="/Library/Developer/CommandLineTools" />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="6e9c8993-c248-4026-b0b5-ad62b0777519" name="Changes" comment="" />
@@ -155,7 +165,63 @@
       <option name="project" value="LOCAL" />
       <updated>1745958011331</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="settings ui done - e">
+      <option name="closed" value="true" />
+      <created>1745958953382</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1745958953382</updated>
+    </task>
+    <task id="LOCAL-00013" summary="constants class created- e">
+      <option name="closed" value="true" />
+      <created>1745958999358</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1745958999358</updated>
+    </task>
+    <task id="LOCAL-00014" summary="added city attribute in data model - e">
+      <option name="closed" value="true" />
+      <created>1745959138733</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1745959138733</updated>
+    </task>
+    <task id="LOCAL-00015" summary="settings view controller active - e">
+      <option name="closed" value="true" />
+      <created>1745959694057</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1745959694057</updated>
+    </task>
+    <task id="LOCAL-00016" summary="collection view controller added- e">
+      <option name="closed" value="true" />
+      <created>1745962047924</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1745962047924</updated>
+    </task>
+    <task id="LOCAL-00017" summary="save location method added- e">
+      <option name="closed" value="true" />
+      <created>1745965604821</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1745965604821</updated>
+    </task>
+    <task id="LOCAL-00018" summary="added default date setter - e">
+      <option name="closed" value="true" />
+      <created>1745965920551</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1745965920551</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -180,6 +246,13 @@
     <MESSAGE value="add the map kit and added segmented control - m" />
     <MESSAGE value="created the map point and view controller - m" />
     <MESSAGE value="added view controllers - e" />
-    <option name="LAST_COMMIT_MESSAGE" value="added view controllers - e" />
+    <MESSAGE value="settings ui done - e" />
+    <MESSAGE value="constants class created- e" />
+    <MESSAGE value="added city attribute in data model - e" />
+    <MESSAGE value="settings view controller active - e" />
+    <MESSAGE value="collection view controller added- e" />
+    <MESSAGE value="save location method added- e" />
+    <MESSAGE value="added default date setter - e" />
+    <option name="LAST_COMMIT_MESSAGE" value="added default date setter - e" />
   </component>
 </project>

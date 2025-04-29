@@ -72,35 +72,25 @@ class AddLocationViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBAction func changeEditMode(_ sender: Any) {
         
-        if sgmtEditMode.selectedSegmentIndex == 0{ //View Mode
+        if sgmtEditMode.selectedSegmentIndex == 0 { //View Mode
             txtLocation.isUserInteractionEnabled = false
             txtLocation.borderStyle = .none
+            navigationItem.rightBarButtonItem = nil
         }
         else{                                      //Edit Mode
             txtLocation.isUserInteractionEnabled = true
             txtLocation.borderStyle = .roundedRect
+            navigationItem.rightBarButtonItem = UIBarButtonItem(
+                barButtonSystemItem: .save,
+                target: self,
+                action: #selector(self.saveLocation)
+            )
         }
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-            barButtonSystemItem: .save,
-            target: self,
-            action: #selector(self.saveLocation)
-        )
+        
     }
     
     @objc func saveLocation(){
         view.endEditing(true)
-     if currentLocation == nil {
-              print("❌ currentLocation is nil. No contact to save.")
-          } else {
-              print("✅ currentLocation exists. Proceeding to save:")
-              print("Location name: \(currentLocation?.name ?? "nil")")
-          }
-        print("🔎 Location TextField Values:")
-        print("Name: \(txtLocation.text ?? "nil")")
-        print("Latitude: \(lblLatitude.text ?? "nil")")
-        print("Longitude: \(lblLongitude.text ?? "nil")")
-        print("City: \(lblCity.text ?? "nil")")
-        print("Date: \(lblDate.text ?? "nil")")
         if currentLocation == nil {
             let context = appDelegate.persistentContainer.viewContext
             currentLocation = Location(context: context)
@@ -119,6 +109,19 @@ class AddLocationViewController: UIViewController, UIImagePickerControllerDelega
         appDelegate.saveContext()
         sgmtEditMode.selectedSegmentIndex = 0
         changeEditMode(self)
+        if currentLocation == nil {
+              print("❌ currentLocation is nil. No contact to save.")
+          } else {
+              print("✅ currentLocation exists. Proceeding to save:")
+              print("Location name: \(currentLocation?.name ?? "nil")")
+          }
+        print("🔎 Location TextField Values:")
+        print("Name: \(txtLocation.text ?? "nil")")
+        print("Latitude: \(lblLatitude.text ?? "nil")")
+        print("Longitude: \(lblLongitude.text ?? "nil")")
+        print("City: \(lblCity.text ?? "nil")")
+        print("Date: \(lblDate.text ?? "nil")")
+        
     }
     func openSettings() {
         if let settingsUrl = URL(string: UIApplication.openSettingsURLString) {
