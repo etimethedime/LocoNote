@@ -27,7 +27,10 @@ class AddLocationViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBOutlet weak var lblLongitude: UILabel!
     
-    @IBOutlet weak var lblAccuracy: UILabel!
+    @IBOutlet weak var lblCity: UILabel!
+    @IBOutlet weak var lblDate: UILabel!
+    
+    @IBOutlet weak var btnDeviceCoordinates: UIButton!
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
@@ -69,6 +72,54 @@ class AddLocationViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func changeEditMode(_ sender: Any) {
+        
+        if sgmtEditMode.selectedSegmentIndex == 0{ //View Mode
+            txtLocation.isUserInteractionEnabled = false
+            txtLocation.borderStyle = .none
+        }
+        else{                                      //Edit Mode
+            txtLocation.isUserInteractionEnabled = true
+            txtLocation.borderStyle = .roundedRect
+        }
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .save,
+            target: self,
+            action: #selector(self.saveLocation)
+        )
+    }
+    
+    @objc func saveLocation(){
+        view.endEditing(true)
+     if currentLocation == nil {
+              print("❌ currentLocation is nil. No contact to save.")
+          } else {
+              print("✅ currentLocation exists. Proceeding to save:")
+              print("Location name: \(currentLocation?.name ?? "nil")")
+          }
+        print("🔎 Location TextField Values:")
+        print("Name: \(txtLocation.text ?? "nil")")
+        print("Latitude: \(lblLatitude.text ?? "nil")")
+        print("Longitude: \(lblLongitude.text ?? "nil")")
+        print("City: \(lblCity.text ?? "nil")")
+        print("Date: \(lblDate.text ?? "nil")")
+        if currentLocation == nil {
+            let context = appDelegate.persistentContainer.viewContext
+            currentLocation = Location(context: context)
+        }
+        currentLocation?.name = txtLocation.text
+        if let latText = lblLatitude.text, let latitude = Double(latText) {
+            currentLocation?.latitude = latitude
+        }
+
+        if let lonText = lblLongitude.text, let longitude = Double(lonText) {
+            currentLocation?.longitude = longitude
+        }
+        currentLocation?.city = lblCity.text
+        currentLocation?.date = lblDate.text
+        currentLocation?.image = imgLocation.image?.jpegData(compressionQuality: 0.8)
+        appDelegate.saveContext()
+        sgmtEditMode.selectedSegmentIndex = 0
+        changeEditMode(self)
     }
     func openSettings() {
         if let settingsUrl = URL(string: UIApplication.openSettingsURLString) {
