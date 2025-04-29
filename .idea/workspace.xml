@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e9c8993-c248-4026-b0b5-ad62b0777519" name="Changes" comment="commit">
+    <list default="true" id="6e9c8993-c248-4026-b0b5-ad62b0777519" name="Changes" comment="add the map kit and added segmented control - m">
+      <change afterPath="$PROJECT_DIR$/LocoNote/MapPoint.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LocoNote/MapViewController.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LocoNote/Base.lproj/Main.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/LocoNote/Base.lproj/Main.storyboard" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -132,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745940090863</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add the map kit and added segmented control - m">
+      <option name="closed" value="true" />
+      <created>1745952875882</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1745952875882</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -154,6 +164,7 @@
     <MESSAGE value="the camera permissions still isn't showing up" />
     <MESSAGE value="location works, still gotta test on phone." />
     <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+    <MESSAGE value="add the map kit and added segmented control - m" />
+    <option name="LAST_COMMIT_MESSAGE" value="add the map kit and added segmented control - m" />
   </component>
 </project>

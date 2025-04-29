@@ -246,10 +246,10 @@
             </objects>
             <point key="canvasLocation" x="1772" y="-889"/>
         </scene>
-        <!--Item-->
+        <!--Maps -->
         <scene sceneID="Hrg-b1-RaD">
             <objects>
-                <viewController storyboardIdentifier="Maps" id="AqL-a3-S04" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Maps" title="Maps " id="AqL-a3-S04" customClass="MapViewController" customModule="LocoNote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8QA-5x-jCv">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -266,6 +266,14 @@
                                     <segment title="Satelite"/>
                                 </segments>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmV-8N-10B">
+                                <rect key="frame" x="313" y="118" width="85" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Find Me"/>
+                                <connections>
+                                    <action selector="findUser:" destination="AqL-a3-S04" eventType="touchUpInside" id="3vS-aD-dsc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kcU-PG-4B0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -274,11 +282,17 @@
                             <constraint firstItem="kcU-PG-4B0" firstAttribute="bottom" secondItem="VM7-o5-3to" secondAttribute="bottom" constant="14" id="2w4-Be-wjk"/>
                             <constraint firstItem="56U-dF-j39" firstAttribute="bottom" secondItem="VM7-o5-3to" secondAttribute="bottom" id="COw-Zf-u6L"/>
                             <constraint firstItem="VM7-o5-3to" firstAttribute="leading" secondItem="8QA-5x-jCv" secondAttribute="leading" id="WdT-IM-GEB"/>
+                            <constraint firstItem="dmV-8N-10B" firstAttribute="top" secondItem="VM7-o5-3to" secondAttribute="top" id="Y8C-T3-I14"/>
                             <constraint firstItem="kcU-PG-4B0" firstAttribute="trailing" secondItem="VM7-o5-3to" secondAttribute="trailing" id="igi-l5-Bhm"/>
                             <constraint firstItem="VM7-o5-3to" firstAttribute="top" secondItem="kcU-PG-4B0" secondAttribute="top" id="uGS-MF-1Ic"/>
+                            <constraint firstItem="dmV-8N-10B" firstAttribute="leading" secondItem="kcU-PG-4B0" secondAttribute="leading" constant="313" id="uJR-n5-DCe"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="map" catalog="system" id="oTP-Ml-5G6"/>
+                    <connections>
+                        <outlet property="mapView" destination="VM7-o5-3to" id="xFe-XR-an7"/>
+                        <outlet property="sgmtMapType" destination="56U-dF-j39" id="nby-xD-5a4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wBf-XK-wdr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
