@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LocoNote" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Favorites" id="BYZ-38-t0r" customClass="ViewController" customModule="LocoNote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,6 +26,13 @@
                                     <tabBarItem title="Item" image="gear" catalog="system" id="CWj-FE-nay"/>
                                 </items>
                             </tabBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Favorites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZq-6B-ccJ">
+                                <rect key="frame" x="162" y="416" width="69" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -36,9 +43,43 @@
             <point key="canvasLocation" x="140" y="4"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="bAA-5k-Giy">
+            <objects>
+                <viewController storyboardIdentifier="Main" id="HSp-eI-fsx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VSI-K0-mYA">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9vO-RV-naU">
+                                <rect key="frame" x="0.0" y="769" width="393" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem systemItem="favorites" id="kbO-t0-eUZ"/>
+                                    <tabBarItem title="Maps" image="globe" catalog="system" id="1aY-MM-PF4"/>
+                                    <tabBarItem title="Item" image="gear" catalog="system" id="DWg-8O-dPI"/>
+                                </items>
+                            </tabBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Main" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAQ-zh-EMX">
+                                <rect key="frame" x="175" y="416" width="37" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vb5-JR-lw2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zkh-Bk-fWm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1033" y="-249"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="Hrg-b1-RaD">
             <objects>
-                <viewController id="AqL-a3-S04" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Maps" id="AqL-a3-S04" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8QA-5x-jCv">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,18 +93,62 @@
                                     <tabBarItem title="Item" image="gear" catalog="system" id="53E-YH-nh7"/>
                                 </items>
                             </tabBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Md1-aV-qiC">
+                                <rect key="frame" x="175" y="416" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kcU-PG-4B0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="LD5-Pp-wJL" firstAttribute="top" secondItem="kcU-PG-4B0" secondAttribute="top" constant="710" id="5PC-f2-SQi"/>
                             <constraint firstItem="LD5-Pp-wJL" firstAttribute="bottom" secondItem="kcU-PG-4B0" secondAttribute="bottom" id="CRS-Iv-HmE"/>
                             <constraint firstItem="LD5-Pp-wJL" firstAttribute="trailing" secondItem="kcU-PG-4B0" secondAttribute="trailing" id="KcM-aY-baC"/>
+                            <constraint firstItem="LD5-Pp-wJL" firstAttribute="centerX" secondItem="8QA-5x-jCv" secondAttribute="centerX" id="OrE-qO-6YI"/>
+                            <constraint firstItem="LD5-Pp-wJL" firstAttribute="trailing" secondItem="kcU-PG-4B0" secondAttribute="trailing" id="ouX-1w-3oZ"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wBf-XK-wdr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="938" y="-14"/>
+            <point key="canvasLocation" x="1032.824427480916" y="503.52112676056339"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="w9p-Ys-RlV">
+            <objects>
+                <viewController storyboardIdentifier="Settings" id="VLs-T4-9yr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="snE-4c-LGu">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I3r-dv-C5k">
+                                <rect key="frame" x="0.0" y="769" width="393" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem systemItem="favorites" id="iEe-ZS-PfT"/>
+                                    <tabBarItem title="Maps" image="globe" catalog="system" id="Pjg-Pg-riN"/>
+                                    <tabBarItem title="Item" image="gear" catalog="system" id="f4e-zC-XbE"/>
+                                </items>
+                            </tabBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCv-dq-zWo">
+                                <rect key="frame" x="165" y="416" width="63" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wfQ-Rl-Mcg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HW4-hD-tbp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1880" y="4"/>
         </scene>
     </scenes>
     <resources>
