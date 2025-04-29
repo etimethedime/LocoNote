@@ -1,4 +1,4 @@
-g//
+//
 //  ViewController.swift
 //  LocoNote
 //
