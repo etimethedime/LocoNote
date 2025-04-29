@@ -245,7 +245,7 @@
             </objects>
             <point key="canvasLocation" x="1772" y="-889"/>
         </scene>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="Hrg-b1-RaD">
             <objects>
                 <viewController storyboardIdentifier="Maps" id="AqL-a3-S04" sceneMemberID="viewController">
@@ -260,9 +260,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tabBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LD5-Pp-wJL">
+                                <rect key="frame" x="0.0" y="721" width="393" height="117"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem systemItem="favorites" id="YMt-cC-3vm"/>
+                                    <tabBarItem title="Maps" image="map" catalog="system" id="437-Kt-x51"/>
+                                    <tabBarItem title="Item" image="gear" catalog="system" id="53E-YH-nh7"/>
+                                </items>
+                            </tabBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kcU-PG-4B0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LD5-Pp-wJL" firstAttribute="top" secondItem="kcU-PG-4B0" secondAttribute="top" constant="710" id="5PC-f2-SQi"/>
+                            <constraint firstItem="LD5-Pp-wJL" firstAttribute="bottom" secondItem="kcU-PG-4B0" secondAttribute="bottom" id="CRS-Iv-HmE"/>
+                            <constraint firstItem="LD5-Pp-wJL" firstAttribute="trailing" secondItem="kcU-PG-4B0" secondAttribute="trailing" id="KcM-aY-baC"/>
+                            <constraint firstItem="LD5-Pp-wJL" firstAttribute="centerX" secondItem="8QA-5x-jCv" secondAttribute="centerX" id="OrE-qO-6YI"/>
+                            <constraint firstItem="LD5-Pp-wJL" firstAttribute="trailing" secondItem="kcU-PG-4B0" secondAttribute="trailing" id="ouX-1w-3oZ"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="oTP-Ml-5G6"/>
                 </viewController>
@@ -270,7 +286,7 @@
             </objects>
             <point key="canvasLocation" x="636" y="54"/>
         </scene>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="w9p-Ys-RlV">
             <objects>
                 <viewController storyboardIdentifier="Settings" id="VLs-T4-9yr" sceneMemberID="viewController">
@@ -278,6 +294,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I3r-dv-C5k">
+                                <rect key="frame" x="0.0" y="769" width="393" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem systemItem="favorites" id="iEe-ZS-PfT"/>
+                                    <tabBarItem title="Maps" image="map" catalog="system" id="Pjg-Pg-riN"/>
+                                    <tabBarItem title="Item" image="gear" catalog="system" id="f4e-zC-XbE"/>
+                                </items>
+                            </tabBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCv-dq-zWo">
                                 <rect key="frame" x="165" y="416" width="63" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
