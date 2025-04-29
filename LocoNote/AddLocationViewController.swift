@@ -75,6 +75,7 @@ class AddLocationViewController: UIViewController, UIImagePickerControllerDelega
         }
         dismiss(animated: true, completion: nil)
     }
+
     
     @IBAction func deviceCoordinates(_ sender: Any) {
     }
