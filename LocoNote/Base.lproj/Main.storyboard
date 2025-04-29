@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,7 +22,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <tabBarItem systemItem="favorites" id="If4-7W-0mw"/>
-                                    <tabBarItem title="Maps" image="globe" catalog="system" id="dqw-i8-MRU"/>
+                                    <tabBarItem title="Maps" image="map" catalog="system" id="dqw-i8-MRU"/>
                                     <tabBarItem title="Item" image="gear" catalog="system" id="CWj-FE-nay"/>
                                 </items>
                             </tabBar>
@@ -56,7 +56,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <tabBarItem systemItem="favorites" id="kbO-t0-eUZ"/>
-                                    <tabBarItem title="Maps" image="globe" catalog="system" id="1aY-MM-PF4"/>
+                                    <tabBarItem title="Maps" image="map" catalog="system" id="1aY-MM-PF4"/>
                                     <tabBarItem title="Item" image="gear" catalog="system" id="DWg-8O-dPI"/>
                                 </items>
                             </tabBar>
@@ -80,7 +80,7 @@
         <scene sceneID="Hrg-b1-RaD">
             <objects>
                 <viewController storyboardIdentifier="Maps" id="AqL-a3-S04" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8QA-5x-jCv">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8QA-5x-jCv">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -96,7 +96,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <tabBarItem systemItem="favorites" id="YMt-cC-3vm"/>
-                                    <tabBarItem title="Maps" image="globe" catalog="system" id="437-Kt-x51"/>
+                                    <tabBarItem title="Maps" image="map" catalog="system" id="437-Kt-x51"/>
                                     <tabBarItem title="Item" image="gear" catalog="system" id="53E-YH-nh7"/>
                                 </items>
                             </tabBar>
@@ -130,7 +130,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <tabBarItem systemItem="favorites" id="iEe-ZS-PfT"/>
-                                    <tabBarItem title="Maps" image="globe" catalog="system" id="Pjg-Pg-riN"/>
+                                    <tabBarItem title="Maps" image="map" catalog="system" id="Pjg-Pg-riN"/>
                                     <tabBarItem title="Item" image="gear" catalog="system" id="f4e-zC-XbE"/>
                                 </items>
                             </tabBar>
@@ -153,7 +153,7 @@
     </scenes>
     <resources>
         <image name="gear" catalog="system" width="128" height="122"/>
-        <image name="globe" catalog="system" width="128" height="123"/>
+        <image name="map" catalog="system" width="128" height="112"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
