@@ -11,6 +11,7 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var switchAsc: UISwitch!
+    let sortOrderItems: Array<String> = ["name", "city", "birthday"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
