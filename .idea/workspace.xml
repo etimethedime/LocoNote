@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e9c8993-c248-4026-b0b5-ad62b0777519" name="Changes" comment="commited comment - e">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LocoNote/MyLocationDataModel.xcdatamodeld/MyLocationDataModel.xcdatamodel/contents" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LocoNote/Base.lproj/Main.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/LocoNote/Base.lproj/Main.storyboard" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +56,7 @@
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "branchOfEzra",
+    "git-widget-placeholder": "branchOfMikiyas",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/ezra/Documents/XCode/LocoNote"
   }
