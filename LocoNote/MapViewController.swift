@@ -18,6 +18,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var sgmtMapType: UISegmentedControl!
     
+    @IBAction func mapTypeChanged(_ sender: Any) {
+        switch sgmtMapType.selectedSegmentIndex{
+        case 0:
+            mapView.mapType = .standard
+        case 1:
+            mapView.mapType = .hybrid
+        case 2:
+            mapView.mapType = .satellite
+        default:break
+        }
+    }
     
     @IBAction func findUser(_ sender: Any) {
         mapView.showsUserLocation = true
@@ -60,3 +71,27 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
     }
 }
+private func processAddressResponse(_ location: Location, withPlacemarks placemarks: [CLPlacemark]?, error: Error?) {
+    if let error = error{
+        print("Geocode Error: \(error)")
+    }
+    else {
+        var bestMatch: CLLocation?
+        if let placemarks = placemarks, placemarks.count > 0{
+            bestMatch = placemarks.first?.location
+        }
+        if let coordinate = bestMatch?.coordinate {
+            let mp = MapPoint(latitude:coordinate.latitude, longitude:coordinate.longitude)
+            mp.title = location.name
+            mp.subtitle = location.longitude.description + " " + location.latitude.description
+            
+        }
+        else{
+            print("Didnt find any matching locations")
+        }
+    }
+}
+
+
+
+
