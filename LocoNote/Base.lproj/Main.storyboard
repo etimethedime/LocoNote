@@ -245,7 +245,7 @@
             </objects>
             <point key="canvasLocation" x="1772" y="-889"/>
         </scene>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="Hrg-b1-RaD">
             <objects>
                 <viewController storyboardIdentifier="Maps" id="AqL-a3-S04" sceneMemberID="viewController">
@@ -286,7 +286,7 @@
             </objects>
             <point key="canvasLocation" x="636" y="54"/>
         </scene>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="w9p-Ys-RlV">
             <objects>
                 <viewController storyboardIdentifier="Settings" id="VLs-T4-9yr" sceneMemberID="viewController">
@@ -323,6 +323,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gear" catalog="system" width="128" height="122"/>
+        <image name="map" catalog="system" width="128" height="112"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
