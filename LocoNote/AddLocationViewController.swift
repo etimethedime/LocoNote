@@ -38,13 +38,12 @@ class AddLocationViewController: UIViewController, UIImagePickerControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
+
     }
     
     @IBAction func changePicture(_ sender: Any) {
@@ -143,6 +142,10 @@ class AddLocationViewController: UIViewController, UIImagePickerControllerDelega
             }
             currentLocation?.image = image.jpegData(compressionQuality: 1.0)
         }
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        lblDate.text = formatter.string(from: Date())
         dismiss(animated: true, completion: nil)
     }
 
@@ -171,7 +174,6 @@ class AddLocationViewController: UIViewController, UIImagePickerControllerDelega
                 let coordinate = location.coordinate
                 lblLatitude.text = String(format: "%g\u{00B0}", coordinate.latitude)
                 lblLongitude.text = String(format: "%g\u{00B0}", coordinate.longitude)
-                lblAccuracy.text = String(format: "%gm", location.horizontalAccuracy)
             }
         }
     }
