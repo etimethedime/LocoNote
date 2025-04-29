@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e9c8993-c248-4026-b0b5-ad62b0777519" name="Changes" comment="commited comment - e">
-      <change afterPath="$PROJECT_DIR$/LocoNote/MyLocationDataModel.xcdatamodeld/MyLocationDataModel.xcdatamodel/contents" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LocoNote/Base.lproj/Main.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/LocoNote/Base.lproj/Main.storyboard" afterDir="false" />
-    </list>
+    <list default="true" id="6e9c8993-c248-4026-b0b5-ad62b0777519" name="Changes" comment="commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,7 +23,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -56,7 +52,7 @@
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "branchOfMikiyas",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/ezra/Documents/XCode/LocoNote"
   }
@@ -86,7 +82,47 @@
       <option name="project" value="LOCAL" />
       <updated>1745886104906</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="finished the ui for the addLocation scene">
+      <option name="closed" value="true" />
+      <created>1745905121207</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1745905121207</updated>
+    </task>
+    <task id="LOCAL-00004" summary="got the camera permissions notes to show up, but its not showing up on the phone.">
+      <option name="closed" value="true" />
+      <created>1745910217959</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1745910217959</updated>
+    </task>
+    <task id="LOCAL-00005" summary="the camera permissions still isn't showing up">
+      <option name="closed" value="true" />
+      <created>1745912186758</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1745912186758</updated>
+    </task>
+    <task id="LOCAL-00006" summary="location works, still gotta test on phone.">
+      <option name="closed" value="true" />
+      <created>1745914268509</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1745914268509</updated>
+    </task>
+    <task id="LOCAL-00007" summary="commit">
+      <option name="closed" value="true" />
+      <created>1745914521531</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1745914521531</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -103,6 +139,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ezra pushing from cosmas's branch - e" />
     <MESSAGE value="commited comment - e" />
-    <option name="LAST_COMMIT_MESSAGE" value="commited comment - e" />
+    <MESSAGE value="finished the ui for the addLocation scene" />
+    <MESSAGE value="got the camera permissions notes to show up, but its not showing up on the phone." />
+    <MESSAGE value="the camera permissions still isn't showing up" />
+    <MESSAGE value="location works, still gotta test on phone." />
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
 </project>
