@@ -33,8 +33,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     @IBAction func findUser(_ sender: Any) {
         mapView.showsUserLocation = true
-        mapView.setUserTrackingMode(.follow,animated: true)
-    }
+            mapView.setUserTrackingMode(.follow, animated: true)
+            if let userLocation = mapView.userLocation.location {
+                let region = MKCoordinateRegion(center: userLocation.coordinate,
+                                                latitudinalMeters: 1000,
+                                                longitudinalMeters: 1000)
+                mapView.setRegion(region, animated: true)
+            }
+        }
     
     override func viewDidLoad() {
         super.viewDidLoad()
