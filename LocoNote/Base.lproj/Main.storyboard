@@ -119,6 +119,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9S-oa-S6A">
+                                <rect key="frame" x="0.0" y="432" width="116" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="ceb-eP-rU0"/>
+                                    <constraint firstAttribute="width" constant="116" id="g8e-vT-5D6"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Take Picture">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="changePicture:" destination="HSp-eI-fsx" eventType="touchUpInside" id="aze-0K-EZZ"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08s-ce-Q0m">
                                 <rect key="frame" x="0.0" y="701" width="169" height="34"/>
                                 <constraints>
@@ -133,16 +147,6 @@
                                     <action selector="deviceCoordinates:" destination="HSp-eI-fsx" eventType="touchUpInside" id="8gK-hr-vnI"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mm/dd/yyyy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PV-vD-eD2">
-                                <rect key="frame" x="260" y="432" width="107" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="107" id="6GR-6n-w0u"/>
-                                    <constraint firstAttribute="height" constant="20" id="cJ1-Mx-cU9"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1h7-Qq-n4K">
                                 <rect key="frame" x="177" y="468" width="200" height="34"/>
                                 <constraints>
@@ -233,20 +237,16 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Sga-yJ-qSg"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9S-oa-S6A">
-                                <rect key="frame" x="0.0" y="432" width="116" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PV-vD-eD2">
+                                <rect key="frame" x="147" y="431" width="230" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="ceb-eP-rU0"/>
-                                    <constraint firstAttribute="width" constant="116" id="g8e-vT-5D6"/>
+                                    <constraint firstAttribute="width" constant="230" id="6GR-6n-w0u"/>
+                                    <constraint firstAttribute="height" constant="20" id="cJ1-Mx-cU9"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Take Picture">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="changePicture:" destination="HSp-eI-fsx" eventType="touchUpInside" id="aze-0K-EZZ"/>
-                                </connections>
-                            </button>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vb5-JR-lw2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -258,9 +258,9 @@
                             <constraint firstItem="ZQB-Xw-Dn4" firstAttribute="top" secondItem="08s-ce-Q0m" secondAttribute="bottom" constant="-23" id="P8W-kC-Gmd"/>
                             <constraint firstItem="uyA-uK-gs7" firstAttribute="top" secondItem="tZe-Pg-0kQ" secondAttribute="bottom" constant="75" id="Q9Z-Ri-DHk"/>
                             <constraint firstItem="tZe-Pg-0kQ" firstAttribute="leading" secondItem="VSI-K0-mYA" secondAttribute="leadingMargin" constant="10" id="QJu-2h-UUZ"/>
-                            <constraint firstItem="2PV-vD-eD2" firstAttribute="leading" secondItem="x9S-oa-S6A" secondAttribute="trailing" constant="144" id="VQC-Dp-qAn"/>
+                            <constraint firstItem="2PV-vD-eD2" firstAttribute="leading" secondItem="x9S-oa-S6A" secondAttribute="trailing" constant="31" id="VQC-Dp-qAn"/>
                             <constraint firstItem="tZe-Pg-0kQ" firstAttribute="top" secondItem="YPr-HA-siH" secondAttribute="bottom" constant="8" id="VpC-Ti-Vbd"/>
-                            <constraint firstItem="2PV-vD-eD2" firstAttribute="top" secondItem="tZe-Pg-0kQ" secondAttribute="bottom" constant="33" id="a5e-0x-jfM"/>
+                            <constraint firstItem="2PV-vD-eD2" firstAttribute="top" secondItem="tZe-Pg-0kQ" secondAttribute="bottom" constant="32" id="a5e-0x-jfM"/>
                             <constraint firstItem="uyA-uK-gs7" firstAttribute="leading" secondItem="vb5-JR-lw2" secondAttribute="leading" id="ffT-lj-QfQ"/>
                             <constraint firstItem="YPr-HA-siH" firstAttribute="top" secondItem="vb5-JR-lw2" secondAttribute="top" id="hVw-Hx-fBU"/>
                             <constraint firstItem="ZQB-Xw-Dn4" firstAttribute="centerX" secondItem="VSI-K0-mYA" secondAttribute="centerX" constant="80.5" id="ke0-Xm-BHE"/>
@@ -275,6 +275,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="btnDeviceCoordinates" destination="08s-ce-Q0m" id="kWO-Oh-TkP"/>
+                        <outlet property="btnLocationImage" destination="x9S-oa-S6A" id="ztS-Eb-0jt"/>
                         <outlet property="imgLocation" destination="tZe-Pg-0kQ" id="gIv-Q9-cO7"/>
                         <outlet property="lblCity" destination="UW5-GT-pXN" id="p95-gj-F4h"/>
                         <outlet property="lblDate" destination="2PV-vD-eD2" id="FkG-qn-ORs"/>

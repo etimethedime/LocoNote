@@ -32,49 +32,53 @@ class AddLocationViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBOutlet weak var btnDeviceCoordinates: UIButton!
     
+    @IBOutlet weak var btnLocationImage: UIButton!
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
+
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
 
+        if let location = currentLocation {
+            txtLocation.text = location.name
+            lblCity.text = location.city
+            lblLatitude.text = String(location.latitude)
+            lblLongitude.text = String(location.longitude)
+            lblDate.text = location.date
+            if let imageData = location.image {
+                imgLocation.image = UIImage(data: imageData)
+            }
+        }
+        sgmtEditMode.selectedSegmentIndex = 0
+        changeEditMode(sgmtEditMode!)
     }
+
+    
+    
     
     @IBAction func changePicture(_ sender: Any) {
-        if AVCaptureDevice.authorizationStatus(for: AVMediaType.video) != AVAuthorizationStatus.authorized {
-            let alertController = UIAlertController(title: "Camera Access Denied", message: "In order to take pictures, you need to allow the app to access the camera in the Settings.", preferredStyle: .alert)
-            print(alertController.message)
-            let actionSettings = UIAlertAction(title: "Settings", style: .default) { (action) in
-                self.openSettings()
-            }
-            let actionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-            alertController.addAction(actionSettings)
-            alertController.addAction(actionCancel)
-            present(alertController, animated: true, completion: nil)
-        }
-        
-        else {
-            if UIImagePickerController .isSourceTypeAvailable(.camera) {
-                let cameraController = UIImagePickerController()
-                cameraController.sourceType = .camera
-                cameraController.cameraCaptureMode = .photo
-                cameraController.delegate = self
-                cameraController.allowsEditing = true
-                self.present(cameraController, animated: true, completion: nil)
-            }
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            let cameraController = UIImagePickerController()
+            cameraController.sourceType = .camera
+            cameraController.cameraCaptureMode = .photo
+            cameraController.delegate = self
+            cameraController.allowsEditing = true
+            self.present(cameraController, animated: true, completion: nil)
         }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.editedImage] as? UIImage {
             
-            imgLocation.contentMode = .scaleAspectFit
+            imgLocation.contentMode = .scaleAspectFill
             imgLocation.image = image
             if currentLocation == nil {
                 let context = appDelegate.persistentContainer.viewContext
@@ -95,10 +99,18 @@ class AddLocationViewController: UIViewController, UIImagePickerControllerDelega
             txtLocation.isUserInteractionEnabled = false
             txtLocation.borderStyle = .none
             navigationItem.rightBarButtonItem = nil
+            btnLocationImage.isEnabled = false
+            btnLocationImage.isHidden = true
+            btnDeviceCoordinates.isEnabled = false
+            btnDeviceCoordinates.isHidden = true
         }
         else{                                      //Edit Mode
             txtLocation.isUserInteractionEnabled = true
             txtLocation.borderStyle = .roundedRect
+            btnLocationImage.isEnabled = true
+            btnLocationImage.isHidden = false
+            btnDeviceCoordinates.isEnabled = true
+            btnDeviceCoordinates.isHidden = false
             navigationItem.rightBarButtonItem = UIBarButtonItem(
                 barButtonSystemItem: .save,
                 target: self,
@@ -115,13 +127,6 @@ class AddLocationViewController: UIViewController, UIImagePickerControllerDelega
             currentLocation = Location(context: context)
         }
         currentLocation?.name = txtLocation.text
-        if let latText = lblLatitude.text, let latitude = Double(latText) {
-            currentLocation?.latitude = latitude
-        }
-
-        if let lonText = lblLongitude.text, let longitude = Double(lonText) {
-            currentLocation?.longitude = longitude
-        }
         currentLocation?.city = lblCity.text
         currentLocation?.date = lblDate.text
         currentLocation?.image = imgLocation.image?.jpegData(compressionQuality: 0.8)
@@ -179,6 +184,8 @@ class AddLocationViewController: UIViewController, UIImagePickerControllerDelega
                 let coordinate = location.coordinate
                 lblLatitude.text = String(format: "%g\u{00B0}", coordinate.latitude)
                 lblLongitude.text = String(format: "%g\u{00B0}", coordinate.longitude)
+                currentLocation?.latitude = coordinate.latitude
+                currentLocation?.longitude = coordinate.longitude
             }
         }
     }
