@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e9c8993-c248-4026-b0b5-ad62b0777519" name="Changes" comment="added default date setter - e">
-      <change afterPath="$PROJECT_DIR$/LocoNote/Assets.xcassets/AppIcon.appiconset/Untitled presentation (2).png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LocoNote.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/LocoNote.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LocoNote/AddLocationViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/LocoNote/AddLocationViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LocoNote/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/LocoNote/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
-    </list>
+    <list default="true" id="6e9c8993-c248-4026-b0b5-ad62b0777519" name="Changes" comment="added default date setter - e" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,12 +31,12 @@
     &quot;assignee&quot;: &quot;etimethedime&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;git@github.com:etimethedime/LocoNote.git&quot;,
-    &quot;accountId&quot;: &quot;fd879a45-d155-4a29-8019-dc9caed611c5&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/etimethedime/LocoNote",
+    "accountId": "a6e1a99a-2761-4a23-80f7-98d36c418df7"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
