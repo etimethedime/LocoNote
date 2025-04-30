@@ -39,7 +39,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     @IBAction func sortDirectionChanged(_ sender: Any) {
         let settings = UserDefaults.standard//Log the switch value
-        settings.set(switchAsc.isOn, forKey: Constants.kSortDirectionDescending)
+        settings.set(switchAsc.isOn, forKey: Constants.kSortDirectionAscending)
         print("Switch state is \(switchAsc.isOn)")
         settings.synchronize()
     }
