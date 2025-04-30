@@ -134,12 +134,12 @@ class AddLocationViewController: UIViewController, UIImagePickerControllerDelega
         sgmtEditMode.selectedSegmentIndex = 0
         changeEditMode(self)
         if currentLocation == nil {
-              print("❌ currentLocation is nil. No contact to save.")
+              print("currentLocation is nil. No contact to save.")
           } else {
-              print("✅ currentLocation exists. Proceeding to save:")
+              print("currentLocation exists. Proceeding to save:")
               print("Location name: \(currentLocation?.name ?? "nil")")
           }
-        print("🔎 Location TextField Values:")
+        print("Location TextField Values:")
         print("Name: \(txtLocation.text ?? "nil")")
         print("Latitude: \(lblLatitude.text ?? "nil")")
         print("Longitude: \(lblLongitude.text ?? "nil")")
@@ -181,14 +181,24 @@ class AddLocationViewController: UIViewController, UIImagePickerControllerDelega
             let eventDate = location.timestamp
             let howRecent = eventDate.timeIntervalSinceNow
             if Double(howRecent) < 15.0 {
-                let coordinate = location.coordinate
-                lblLatitude.text = String(format: "%g\u{00B0}", coordinate.latitude)
-                lblLongitude.text = String(format: "%g\u{00B0}", coordinate.longitude)
-                currentLocation?.latitude = coordinate.latitude
-                currentLocation?.longitude = coordinate.longitude
+                let latitude = location.coordinate.latitude
+                let longitude = location.coordinate.longitude
+                
+                lblLatitude.text = String(format: "%g\u{00B0}", latitude)
+                lblLongitude.text = String(format: "%g\u{00B0}", longitude)
+                currentLocation?.latitude = latitude
+                currentLocation?.longitude = longitude
+                
+                let geocoder = CLGeocoder()
+                let loc = CLLocation(latitude: latitude, longitude: longitude)
+                geocoder.reverseGeocodeLocation(loc) { (placemarks, error) in
+                    if let city = placemarks?.first?.locality {
+                        self.lblCity.text = city
+                    } else {
+                        self.lblCity.text = "City not found"
+                    }
+                }
             }
         }
     }
-    
-
 }
