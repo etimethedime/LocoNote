@@ -55,7 +55,7 @@ class LocationTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath)
         let location = locations[indexPath.row] as? Location
         cell.textLabel?.text = location?.name
-        cell.detailTextLabel?.text = (location?.city ?? "")
+        cell.detailTextLabel?.text = location?.city
         cell.accessoryType = UITableViewCell.AccessoryType.detailDisclosureButton
         return cell
     }
