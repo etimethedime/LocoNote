@@ -20,6 +20,7 @@ class LocationTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         loadDataFromDataBase()
         tableView.reloadData()
+        
     }
     
     func loadDataFromDataBase() {
@@ -62,9 +63,9 @@ class LocationTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let contact = locations[indexPath.row] as? Location
+            let location = locations[indexPath.row] as? Location
             let context = appDelegate.persistentContainer.viewContext
-            context.delete(contact!)
+            context.delete(location!)
             do {
                 try context.save()
             } catch {

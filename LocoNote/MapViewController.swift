@@ -76,13 +76,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         location = fetchedObjects as! [Location]
         self.mapView.removeAnnotations(self.mapView.annotations)
         for loc in location {
-            let annotation = MKPointAnnotation()
-            annotation.title = loc.name
-            annotation.coordinate = CLLocationCoordinate2D(
-                latitude: loc.latitude,
-                longitude: loc.longitude
-            )
-            self.mapView.addAnnotation(annotation)
+            let address = "\(loc.latitude),\(loc.longitude)"
+            let geoCoder = CLGeocoder()
+            geoCoder.geocodeAddressString(address) { (placemarks, error) in
+                self.processAddressResponse(
+                    loc, withPlacemarks: placemarks, error: error)
+            }
         }
     }
     
@@ -98,7 +97,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             if let coordinate = bestMatch?.coordinate {
                 let mp = MapPoint(latitude:coordinate.latitude, longitude:coordinate.longitude)
                 mp.title = location.name
-                mp.subtitle = location.longitude.description + " " + location.latitude.description
+                mp.subtitle = String(location.longitude) + " " + String(location.latitude)
                 
             }
             else{
