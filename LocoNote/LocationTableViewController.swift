@@ -38,7 +38,7 @@ class LocationTableViewController: UITableViewController {
         
         do {
             locations = try context.fetch(request)
-            print("Loaded \(locations.count) contacts from core data")
+            print("Loaded \(locations.count) location from core data")
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
@@ -69,7 +69,7 @@ class LocationTableViewController: UITableViewController {
             do {
                 try context.save()
             } catch {
-                fatalError("Error deleting contact: \(error)")
+                fatalError("Error deleting location: \(error)")
             }
             loadDataFromDataBase()
             tableView.deleteRows(at: [indexPath], with: .fade)
