@@ -15,8 +15,11 @@ class LocationTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.navigationItem.leftBarButtonItem = self.editButtonItem
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        loadDataFromDataBase()
+        tableView.reloadData()
     }
     
     func loadDataFromDataBase() {
@@ -25,7 +28,7 @@ class LocationTableViewController: UITableViewController {
         let sortAscending = settings.bool(forKey: Constants.kSortDirectionAscending)
         
         let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSManagedObject>(entityName: "Contact")
+        let request = NSFetchRequest<NSManagedObject>(entityName: "Location")
         
         let sortDescriptor = NSSortDescriptor(key: sortField, ascending: sortAscending)
         request.sortDescriptors = [sortDescriptor]
@@ -96,6 +99,7 @@ class LocationTableViewController: UITableViewController {
         
         present(alertController, animated: true, completion: nil)
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "EditLocation" {
             let locationController = segue.destination as! AddLocationViewController
