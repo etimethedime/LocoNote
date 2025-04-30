@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e9c8993-c248-4026-b0b5-ad62b0777519" name="Changes" comment="added default date setter - e" />
+    <list default="true" id="6e9c8993-c248-4026-b0b5-ad62b0777519" name="Changes" comment="commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LocoNote.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/LocoNote.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LocoNote/MapViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/LocoNote/MapViewController.swift" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,12 +35,12 @@
     &quot;assignee&quot;: &quot;etimethedime&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/etimethedime/LocoNote",
-    "accountId": "a6e1a99a-2761-4a23-80f7-98d36c418df7"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/etimethedime/LocoNote&quot;,
+    &quot;accountId&quot;: &quot;a6e1a99a-2761-4a23-80f7-98d36c418df7&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -215,7 +219,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745965920551</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="commit">
+      <option name="closed" value="true" />
+      <created>1745986553410</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1745986553410</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -236,7 +248,6 @@
     <MESSAGE value="got the camera permissions notes to show up, but its not showing up on the phone." />
     <MESSAGE value="the camera permissions still isn't showing up" />
     <MESSAGE value="location works, still gotta test on phone." />
-    <MESSAGE value="commit" />
     <MESSAGE value="add the map kit and added segmented control - m" />
     <MESSAGE value="created the map point and view controller - m" />
     <MESSAGE value="added view controllers - e" />
@@ -247,6 +258,7 @@
     <MESSAGE value="collection view controller added- e" />
     <MESSAGE value="save location method added- e" />
     <MESSAGE value="added default date setter - e" />
-    <option name="LAST_COMMIT_MESSAGE" value="added default date setter - e" />
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
 </project>

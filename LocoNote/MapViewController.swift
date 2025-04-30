@@ -18,6 +18,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var sgmtMapType: UISegmentedControl!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization( )
+        
+        mapView.delegate = self
+    }
+    
     @IBAction func mapTypeChanged(_ sender: Any) {
         switch sgmtMapType.selectedSegmentIndex{
         case 0:
@@ -32,6 +41,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     @IBAction func findUser(_ sender: Any) {
+        /*
         mapView.showsUserLocation = true
             mapView.setUserTrackingMode(.follow, animated: true)
             if let userLocation = mapView.userLocation.location {
@@ -40,17 +50,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                                                 longitudinalMeters: 1000)
                 mapView.setRegion(region, animated: true)
             }
-        }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization( )
-        
-        mapView.delegate = self
-        
+         */
+        mapView.showAnnotations(mapView.annotations, animated: true)
+        mapView.setUserTrackingMode(.follow, animated: true)
     }
+
     func mapView(_ mapView:MKMapView, didUpdate userLocation: MKUserLocation) {
         var span = MKCoordinateSpan()
         span.latitudeDelta = 0.2
@@ -98,7 +102,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 let mp = MapPoint(latitude:coordinate.latitude, longitude:coordinate.longitude)
                 mp.title = location.name
                 mp.subtitle = String(location.longitude) + " " + String(location.latitude)
-                
+                mapView.addAnnotation(mp)
             }
             else{
                 print("Didnt find any matching locations")
