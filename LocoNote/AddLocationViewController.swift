@@ -49,6 +49,7 @@ class AddLocationViewController: UIViewController, UIImagePickerControllerDelega
     @IBAction func changePicture(_ sender: Any) {
         if AVCaptureDevice.authorizationStatus(for: AVMediaType.video) != AVAuthorizationStatus.authorized {
             let alertController = UIAlertController(title: "Camera Access Denied", message: "In order to take pictures, you need to allow the app to access the camera in the Settings.", preferredStyle: .alert)
+            print(alertController.message)
             let actionSettings = UIAlertAction(title: "Settings", style: .default) { (action) in
                 self.openSettings()
             }
@@ -68,6 +69,24 @@ class AddLocationViewController: UIViewController, UIImagePickerControllerDelega
                 self.present(cameraController, animated: true, completion: nil)
             }
         }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.editedImage] as? UIImage {
+            
+            imgLocation.contentMode = .scaleAspectFit
+            imgLocation.image = image
+            if currentLocation == nil {
+                let context = appDelegate.persistentContainer.viewContext
+                currentLocation = Location(context: context)
+            }
+            currentLocation?.image = image.jpegData(compressionQuality: 1.0)
+        }
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        lblDate.text = formatter.string(from: Date())
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func changeEditMode(_ sender: Any) {
@@ -133,24 +152,7 @@ class AddLocationViewController: UIViewController, UIImagePickerControllerDelega
             }
         }
     }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[.editedImage] as? UIImage {
-            
-            imgLocation.contentMode = .scaleAspectFit
-            imgLocation.image = image
-            if currentLocation == nil {
-                let context = appDelegate.persistentContainer.viewContext
-                currentLocation = Location(context: context)
-            }
-            currentLocation?.image = image.jpegData(compressionQuality: 1.0)
-        }
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .short
-        lblDate.text = formatter.string(from: Date())
-        dismiss(animated: true, completion: nil)
-    }
+
 
     
     @IBAction func deviceCoordinates(_ sender: Any) {

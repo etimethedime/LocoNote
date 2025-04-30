@@ -12,7 +12,7 @@ import CoreLocation
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     var locationManager = CLLocationManager()
-    var locations: [Location] = []
+    var location: [Location] = []
     
     
     @IBOutlet weak var mapView: MKMapView!
@@ -44,7 +44,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         mapView.delegate = self
         
-        // Do any additional setup after loading the view.
     }
     func mapView(_ mapView:MKMapView, didUpdate userLocation: MKUserLocation) {
         var span = MKCoordinateSpan()
@@ -68,31 +67,38 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }catch let error as NSError{
             print("Could not fetch. (error), (error.userInfo)")
         }
-        
-        
+        location = fetchedObjects as! [Location]
+        self.mapView.removeAnnotations(self.mapView.annotations)
+        for loc in location {
+            let annotation = MKPointAnnotation()
+            annotation.title = loc.name
+            annotation.coordinate = CLLocationCoordinate2D(
+                latitude: loc.latitude,
+                longitude: loc.longitude
+            )
+            self.mapView.addAnnotation(annotation)
+        }
     }
+    
+    private func processAddressResponse(_ location: Location, withPlacemarks placemarks: [CLPlacemark]?, error: Error?) {
+        if let error = error{
+            print("Geocode Error: \(error)")
+        }
+        else {
+            var bestMatch: CLLocation?
+            if let placemarks = placemarks, placemarks.count > 0{
+                bestMatch = placemarks.first?.location
+            }
+            if let coordinate = bestMatch?.coordinate {
+                let mp = MapPoint(latitude:coordinate.latitude, longitude:coordinate.longitude)
+                mp.title = location.name
+                mp.subtitle = location.longitude.description + " " + location.latitude.description
+                
+            }
+            else{
+                print("Didnt find any matching locations")
+            }
+        }
+    }
+    
 }
-private func processAddressResponse(_ location: Location, withPlacemarks placemarks: [CLPlacemark]?, error: Error?) {
-    if let error = error{
-        print("Geocode Error: \(error)")
-    }
-    else {
-        var bestMatch: CLLocation?
-        if let placemarks = placemarks, placemarks.count > 0{
-            bestMatch = placemarks.first?.location
-        }
-        if let coordinate = bestMatch?.coordinate {
-            let mp = MapPoint(latitude:coordinate.latitude, longitude:coordinate.longitude)
-            mp.title = location.name
-            mp.subtitle = location.longitude.description + " " + location.latitude.description
-            
-        }
-        else{
-            print("Didnt find any matching locations")
-        }
-    }
-}
-
-
-
-
